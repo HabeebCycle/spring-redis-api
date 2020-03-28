@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: spring-redis-api
+
+  # FREE Redis cluster at https://app.redislabs.com/
+  redis:
+    host: redis-17228.c51.ap-southeast-2-1.ec2.cloud.redislabs.com
+    port: 17228
+    database: 0
+    password: l0ouF0HvYt0LPCt7Ffh3k2PPLm3oxJjb
+
+    #Lettuce configuration for Redis
+    lettuce:
+      pool:
+        max-active: 32
+        max-wait: 300
+        max-idle: 16
+        min-idle: 8
+
+
+---
+spring:
+  profiles: docker
+  redis:
+    host: redis
+    port: 6379
+server:
+  port: 8080
