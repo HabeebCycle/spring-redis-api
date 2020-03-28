@@ -6,6 +6,7 @@ services:
     image: habeebcycle/spring-redis-api:v1
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+      - SPRING_REDIS_PASSWORD=
     ports:
       - "8080:8080"
     depends_on:
